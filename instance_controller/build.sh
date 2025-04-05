@@ -1,5 +1,7 @@
 #/bin/bash
 rm -f deployment_packakages.zip
 
-zip -r deployment_packakages.zip .venv/lib/python3.13/site-packages
-zip deployment_packakages.zip lambda_function.py
+cd .venv/lib/python3.13/site-packages
+zip -r ../../../../deployment_packages.zip .
+cd ../../../../
+zip deployment_packages.zip lambda_function.py
