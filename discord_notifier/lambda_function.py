@@ -28,7 +28,7 @@ def lambda_handler(event, context):
 
         if command_name == "start":
             response_text = "Hello there!"
-        elif command_name == "stop":
+        elif command_name == "echo":
             response_text = f"Echoing: {data['options'][0]['value']}"
         else:
             raise NotImplementedError(f"Command '{command_name}' not implemented")
