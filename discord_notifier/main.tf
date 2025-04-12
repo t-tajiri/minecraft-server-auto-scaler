@@ -34,6 +34,11 @@ provider "discord-interactions" {
 
 # Discord bot commands
 
+resource "discord-interactions_global_command" "start" {
+  name        = "start"
+  description = "マインクラフトサーバーを起動します。"
+}
+
 resource "discord-interactions_global_command" "echo" {
   name        = "echo"
   description = "Echo message back to sender"

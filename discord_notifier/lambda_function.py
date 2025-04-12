@@ -1,9 +1,13 @@
 import json
 import os
 
+import boto3
 from discord_interactions import InteractionResponseType, InteractionType, verify_key
 
+instance_ids = os.environ.get("INSTANCE_IDS", "").split(",")
 discord_public_key = os.environ.get("DISCORD_PUBLIC_KEY", "")
+
+ec2_client = boto3.client("ec2")
 
 
 def lambda_handler(event, context):
@@ -32,7 +36,8 @@ def lambda_handler(event, context):
         command_name = data.get("name")
 
         if command_name == "start":
-            response_text = "Hello there!"
+            ec2_client.start_instances(InstanceIds=instance_ids)
+            response_text = instance_ids
         elif command_name == "echo":
             response_text = f"Echoing: {data['options'][0]['value']}"
         else:
