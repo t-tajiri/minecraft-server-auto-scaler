@@ -1,5 +1,5 @@
-**/.venv
 **/deployment_packages.zip
+**/.venv
 
 # terraform
 .cache
