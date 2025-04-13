@@ -12,4 +12,5 @@ dependencies = [
 [dependency-groups]
 dev = [
     "boto3-stubs[ec2,ssm]>=1.37.33",
+    "mypy>=1.15.0",
 ]
