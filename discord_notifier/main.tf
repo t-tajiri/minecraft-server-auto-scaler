@@ -39,6 +39,11 @@ resource "discord-interactions_global_command" "start" {
   description = "マインクラフトサーバーを起動します。"
 }
 
+resource "discord-interactions_global_command" "stop" {
+  name        = "stop"
+  description = "マインクラフトサーバーを停止します。"
+}
+
 resource "discord-interactions_global_command" "echo" {
   name        = "echo"
   description = "Echo message back to sender"

@@ -38,6 +38,9 @@ def lambda_handler(event, context):
         if command_name == "start":
             ec2_client.start_instances(InstanceIds=instance_ids)
             response_text = instance_ids
+        if command_name == "stop":
+            ec2_client.stop_instances(InstanceIds=instance_ids)
+            response_text = instance_ids
         elif command_name == "echo":
             response_text = f"Echoing: {data['options'][0]['value']}"
         else:
